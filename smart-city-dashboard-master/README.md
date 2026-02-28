@@ -1,32 +1,21 @@
 # Smart City Dashboard
 
-This repository contains a React + Vite project for a smart city dashboard application.
-
-## Getting Started
-
-To run the project locally, make sure you have [Node.js](https://nodejs.org/) installed, then:
-
-```bash
-npm install
-npm run dev
-```
-
-Open http://localhost:8080 in your browser to view the app.
+A real-time smart city monitoring dashboard showing traffic, pollution, weather, and infrastructure data.
 
 ## Features
-
-- Dashboard with statistics
-- Issue reporting and tracking
-- Live map view
-- Leaderboard and blockchain ledger pages
+- Live traffic monitoring
+- Air quality tracking
+- Weather updates
+- Energy consumption stats
 
 ## Tech Stack
-
-Built with:
-
 - React
-- Vite
-- TypeScript
+- Tailwind CSS
+- Node.js
+
+## How to Run
+npm install
+npm run dev
 - Tailwind CSS
 - shadcn-ui components
 
