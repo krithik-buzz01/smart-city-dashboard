@@ -1,39 +1,26 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Dashboard from "./pages/Dashboard";
-import ReportIssue from "./pages/ReportIssue";
-import MapView from "./pages/MapView";
-import IssueTracker from "./pages/IssueTracker";
-import Leaderboard from "./pages/Leaderboard";
-import BlockchainLedger from "./pages/BlockchainLedger";
-import NotFound from "./pages/NotFound";
+export default function App() {
+  return (
+    <div className="min-h-screen bg-gray-100 p-8">
+      <h1 className="text-4xl font-bold mb-8 text-center">
+        Smart City Dashboard
+      </h1>
 
-const queryClient = new QueryClient();
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white p-6 rounded-2xl shadow-md">
+          <h2 className="text-xl font-semibold">Traffic Status</h2>
+          <p className="text-green-600 mt-3 text-lg">Smooth Flow</p>
+        </div>
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/report" element={<ReportIssue />} />
-            <Route path="/map" element={<MapView />} />
-            <Route path="/issues" element={<IssueTracker />} />
-            <Route path="/leaderboard" element={<Leaderboard />} />
-            <Route path="/blockchain" element={<BlockchainLedger />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+        <div className="bg-white p-6 rounded-2xl shadow-md">
+          <h2 className="text-xl font-semibold">Air Quality Index</h2>
+          <p className="text-yellow-600 mt-3 text-lg">AQI 82 (Moderate)</p>
+        </div>
 
-export default App;
+        <div className="bg-white p-6 rounded-2xl shadow-md">
+          <h2 className="text-xl font-semibold">Temperature</h2>
+          <p className="text-blue-600 mt-3 text-lg">28°C</p>
+        </div>
+      </div>
+    </div>
+  );
+}
